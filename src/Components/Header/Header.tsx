@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from "../Assets/water3-rmbg.png"
-import GlobalButton from '../Global/GlobalButton'
+import GlobalButton from "../GlobalProps/GlobalButton"
 import { BiMenuAltRight } from "react-icons/bi";
 
 
