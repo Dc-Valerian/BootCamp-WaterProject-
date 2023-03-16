@@ -3,6 +3,7 @@ import { useRoutes } from 'react-router-dom'
 import About from '../About/About'
 import Login from '../Auth/Login'
 import Register from '../Auth/Register'
+import Detail from "../Detail/Detail"
 import HomeScreen from '../HomeScreen'
 import LandingPage from "../LandingPage"
 
@@ -29,6 +30,9 @@ const AllRoutes = () => {
         },{
             path:"/about",
             element:<About/>
+        },{
+            path:"/detail",
+            element:<Detail/>
         }
     ])
   return element;

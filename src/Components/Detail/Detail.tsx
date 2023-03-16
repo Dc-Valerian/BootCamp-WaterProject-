@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Imag from "../assets/Danone - Water.png";
-import bg from "../assets/dde.png";
+import Imag from "../../Components/Assets/Danone - Water.png"
+import bg from "../../Components/Assets/dde.png"
 
 const DetailPage = () => {
   return (
