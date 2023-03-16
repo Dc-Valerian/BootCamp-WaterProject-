@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
+import About from '../About/About'
 import Login from '../Auth/Login'
 import Register from '../Auth/Register'
 import HomeScreen from '../HomeScreen'
@@ -25,6 +26,9 @@ const AllRoutes = () => {
         },{
             path:"/homepage",
             element:<LandingPage/>
+        },{
+            path:"/about",
+            element:<About/>
         }
     ])
   return element;
