@@ -21,7 +21,7 @@ const DetailPage = () => {
           <Note>A amazing water, good for the health</Note>
           <Quantity>
             <Qty>Quantity:</Qty>
-            <input placeholder="enter your quantity" type="text" />
+            <input placeholder="Enter your quantity" type="text" />
           </Quantity>
           <QuantityPrice>
             Total Price(NGN):
@@ -165,10 +165,10 @@ const Quantity = styled.div`
 
   input {
     width: 200px;
-    height: 30px;
+    height: 40px;
     /* background-color: aqua; */
     outline: none;
-    border-radius: 5px;
+    border-radius: 20px;
     border: 2px solid black;
     padding-left: 7px;
     font-size: 16px;
@@ -240,8 +240,8 @@ const AddToCart = styled.button`
 const ProDuctNumber = styled.div``;
 const PayMethod = styled.div``;
 const ProductImage = styled.div`
-  width: 570px;
-  height: 700px;
+  width: 550px;
+  height: 650px;
   /* background-color: black; */
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
@@ -290,8 +290,8 @@ const ProductDetails = styled.div`
   }
 `;
 const Wrapper = styled.div`
-  width: 70%;
-  height: 700px;
+  width: 80%;
+  height: auto;
   /* background-color: blueviolet; */
   display: flex;
   justify-content: space-between;

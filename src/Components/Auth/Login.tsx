@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bg from "./Assets/water.png";
+import bg from "../Assets/water.png";
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
@@ -18,9 +18,9 @@ const Signin = () => {
 
           <Input>
             <Email>Email</Email>
-            <input type="text" />
+            <input placeholder="" type="text" />
             <Email>Password</Email>
-            <input type="password" />
+            <input placeholder="" type="password" />
           </Input>
           <button>Sign in</button>
           <Signn>

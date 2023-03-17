@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import pic from "./Assets/aboutwater.jpg";
-import guy from "./Assets/guy.jpg";
+// import pic from "./Assets/aboutwater.jpg";
+import pic from "../../Components/Assets/aboutwater.jpg";
+import guy from "../../Components/Assets/guy.jpg";
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
 
       <Two>
         <Box>
-          <img src={pic} />
+          <img src={pic} alt="" />
         </Box>
         <Text>
           <span
