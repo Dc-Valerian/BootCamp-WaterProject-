@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import pic from "./Assets/aboutwater.jpg";
-import guy from "./Assets/guy.jpg";
+import pic from "../Assets/aboutwater.jpg"
+import guy from "../Assets/guy.jpg";
+
+import Footer from "../Home/Footer";
 
 const About = () => {
   return (
     <Container>
+      
       <One>About us</One>
 
       <Two>
@@ -69,6 +72,7 @@ const About = () => {
           </Esther>
         </Member>
       </Third>
+      <Footer />
     </Container>
   );
 };
@@ -138,8 +142,8 @@ const Up = styled.div`
   /* background-color: red; */
   @media (max-width: 600px) {
     /* background-color: #1b1b44; */
-    font-size: 12px;
-    width: 350px;
+   font-size: 12px;
+  width: 350px;
   }
 `;
 const Team = styled.div`
@@ -147,7 +151,7 @@ const Team = styled.div`
   color: #644ff6;
   @media (max-width: 600px) {
     /* background-color: #1b1b44; */
-    font-size: 25px;
+    font-size: 25px ;
   }
 `;
 
@@ -176,10 +180,10 @@ const Text = styled.div`
   flex-direction: column;
   @media (max-width: 600px) {
     /* background-color: #1b1b44; */
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    width: 90%;
+   font-size: 12px;
+  line-height: 15px ;
+  text-align: center;
+width: 90%;
   }
 `;
 
@@ -196,6 +200,7 @@ const Container = styled.div`
   justify-content: space-between;
   font-size: 30px;
   font-weight: bold;
+ 
 `;
 const One = styled.div`
   margin-bottom: 40px;
@@ -203,11 +208,12 @@ const One = styled.div`
   color: #644ff6;
   font-size: 40px;
   font-weight: bold;
+
 `;
 const Box = styled.div`
   height: 100%;
   width: 50%;
-
+ 
   img {
     width: 100%;
     height: 100%;
@@ -223,12 +229,12 @@ const Two = styled.div`
   display: flex;
   @media (max-width: 900px) {
     /* background-color: #8b1b44; */
-    display: block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    /* height:  ; */
+   display: block;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   /* height:  ; */
   }
 
   /* background-color: red; */
