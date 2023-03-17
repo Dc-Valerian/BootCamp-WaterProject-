@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import chat from "../../Components/Assets/card-hover.png"
+import chat from "../Assets/card-hover.png"
 
 interface props{
     title:string;

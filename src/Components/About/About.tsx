@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// import pic from "./Assets/aboutwater.jpg";
 import pic from "../../Components/Assets/aboutwater.jpg";
 import guy from "../../Components/Assets/guy.jpg";
+import pic from "../Assets/aboutwater.jpg";
+import guy from "../Assets/guy.jpg";
+import Footer from "../Home/Footer";
 
 const About = () => {
   return (
@@ -70,6 +72,7 @@ const About = () => {
           </Esther>
         </Member>
       </Third>
+      <Footer />
     </Container>
   );
 };

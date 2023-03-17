@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import line from "../../Assets/line.png"
 import Card from './Card'
-import line from "../../Components/Assets/line.png"
-import icon from "../../Components/Assets/icon.png"
-import icon1 from "../../Components/Assets/icon2.png"
-import icon3 from "../../Components/Assets/icon05.png"
-import icon4 from "../../Components/Assets/icon06.png"
-import icon5 from "../../Components/Assets/icon3.png"
-import nice from "../../Components/Assets/nice2.png"
-import line1 from "../../Components/Assets/line1.png"
+import icon from "../Assets/icon.png"
+import icon1 from "../Assets/icon2.png"
+import icon3 from "../Assets/icon05.png"
+import icon4 from "../Assets/icon06.png"
+import icon5 from "../Assets/icon3.png"
+import nice from "../Assets/nice2.png"
+import line1 from "../Assets/line1.png"
 
 
 const Story = () => {
@@ -19,9 +19,7 @@ const Story = () => {
                 <First>
                   <Title>
                     What's Our Story
-                    <Imag>
-                    <Img src={line}/>
-                    </Imag>
+                 
                   </Title>
                   <Sub>Our company was founded in 2008. Water Brand bottle is great for drinking, cooking, activities, and <br />
                      even for children. The product is certified in 50 countries.</Sub>
@@ -89,14 +87,7 @@ font-size: 15px;
  }
 `
 
-const Imag = styled.div`
-display: flex;
-align-items: center;
-margin: 5px;
-justify-content: center;
-`
 
-const Img = styled.img``
 
 const Title = styled.div`
 font-weight: 800;

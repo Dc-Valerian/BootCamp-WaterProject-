@@ -1,31 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../Assets/water.png";
+import bg from "../Assets/water.png"
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
 
-const Signin = () => {
+const Signup = () => {
   return (
     <Container>
       <Wrapper>
         {/* <One> */}
         <Box>
           <Sign>
-            Sign in
+            Sign Up
             <Please>Please input your details</Please>
           </Sign>
 
           <Input>
+          
             <Email>Email</Email>
             <input placeholder="" type="text" />
             <Email>Password</Email>
             <input placeholder="" type="password" />
+            <input type="text"/>
+            <Email>Password</Email>
+            <input type="password" />
           </Input>
-          <button>Sign in</button>
-          <Signn>
-            Don't have an acount?{" "}
-            <NavLink to="/signup">
+          <button>Sign up</button>
+          <Signin>
+            Do you have an acount?{" "}
+            <NavLink to="/homepage">
               <span
                 style={{
                   color: "#030614",
@@ -34,17 +39,17 @@ const Signin = () => {
                   fontSize: "15px",
                 }}
               >
-                Sign up
+                Sign in
               </span>
             </NavLink>
-          </Signn>
+          </Signin>
         </Box>
       </Wrapper>
     </Container>
   );
 };
 
-export default Signin;
+export default Signup;
 
 const Email = styled.div`
   font-size: 11px;
@@ -56,16 +61,27 @@ const Logo = styled.div`
   font-weight: bold;
 `;
 
-const Signn = styled.div`
+const Signin = styled.div`
   font-size: 12px;
   color: lightgray;
   margin-top: 40px;
-  margin-left: 20px;
+
+
 `;
 const Input = styled.div`
   width: 100%;
   color: #030614;
   /* background-color: red; */
+
+  input{
+    height: 50px;
+    /* width: 20px; */
+    border-radius: 5px;
+    background-color:#EDF2F7;
+    border: none;
+    outline: none;
+    /* padding-left: 15px; */
+  }
 `;
 
 const Two = styled.div``;
@@ -83,10 +99,6 @@ const Please = styled.div`
   line-height: 30px;
   /* margin-top: 10px; */
   color: lightgray;
-  @media (max-width: 800px) {
-    /* background-color: #1b1b44; */
-    font-size: 9px;
-  }
   /* margin-bottom: 25px; */
 `;
 const Google = styled.div`
@@ -110,22 +122,21 @@ const Box = styled.div`
   padding-right: 15px;
   /* border: 1px solid black; */
   border-radius: 20px;
-  background-color: white;
+  background-color:grey;
   width: 25%;
-  height: 70%;
+  height: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   z-index: 1;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     /* background-color: #1b1b44; */
-    width: 40%;
+    width: 30%;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
   input {
     border: none;
     font-size: 15px;
@@ -134,7 +145,7 @@ const Box = styled.div`
     width: 100%;
   }
   button {
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: #030614;
     color: white;
     width: 100%;

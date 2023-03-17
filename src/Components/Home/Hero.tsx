@@ -1,46 +1,45 @@
-// import React from 'react'
 import styled from 'styled-components'
-import GlobalButton from "../../Components/GlobalProps/GlobalButton"
-import bg from "../../Components/Assets/line3.png"
-import pic from "../../Components/Assets/nice3rm.png"
+import GlobalButton from "../GlobalProps/GlobalButton"
+// import bg from "../../Assets/line3.png"
+import {CgProfile} from "react-icons/cg"
+// import pic from "../../Assets/nice3rm.png"
+// import bg1 from "../../Assets/BgImage.jpg"
+import bg5 from "../Assets/bg5.jpg"
+import { NavLink } from 'react-router-dom'
 
 const Hero = () => {
   return (
     <div>
       <Container>
-        <Wrapper>
+        {/* <Image>
+          <Img src={bg5}/>
+        </Image> */}
           <First>
            <Title>
-           Water is a precious and fiinite resource that sustains life on Earth<br />
+           Online Water<br />
+           Purchasing of Water Made Easy
             
            </Title>
             <Text>
             Water is the essential building block of life. <br />
-             But it is more than just essential to quench thirst or protect health; <br />
-              water is vital for creating jobs and supporting economic, social, and human development
+             But it is more than just essential to quench thirst or protect health<br />
+              Purchase Your Clean and healthy water at an affordable price
             </Text>
 
          <Button>
-         <GlobalButton name='Start Now' bcc='#644FF6' border='none' cl='white' />
-            <GlobalButton name='Learn More' bcc="transparent" border='1px solid white' cl='white'/>    
+        <NavLink to="/register">
+        <GlobalButton name='Start Now' bcc='#644FF6' border='none' cl='white' />
+        </NavLink>
+          <NavLink to="/login">
+          <GlobalButton name='Learn More' bcc="transparent" border='1px solid white' cl='white'/>   
+            </NavLink> 
          </Button>      
-      <Line>
-      <p>
-         50% Off For Your Brand New Account In Finden {" "}
-         <span>
-         Sign Up Today
-         </span>
-         </p>
-      </Line>
+    
           </First>
-          <Second>
-            <Pic src={pic} />
-            {/* <Img1 src={img1}/> */}
-            {/* <Imag> */}
-            {/* <Img src={img} /> */}
-            {/* </Imag> */}
-          </Second>
-        </Wrapper>
+
+
+        
+      
       </Container>
     </div>
   )
@@ -60,7 +59,7 @@ object-fit: cover;
 }
 `
 
-const Imag = styled.div`
+const Image = styled.div`
   background-color: red;
   height:400px;
   width: 400px;
@@ -132,16 +131,7 @@ justify-content: center;
 
 `
 
-const Line = styled.div`
-span{
-  color: #644FF6;
-  font-size: 17px;
-}
-p{
-  font-size: 14px;
 
-}
-`
 
 const Button = styled.div`
 display: flex;
@@ -163,67 +153,19 @@ color: white;
 margin: 0;
 
 `
-const Four = styled.div`
-display: flex;
-align-items: center;
-flex-direction: column;
-background-color: #644FF6;
-height: 120px;
-width:130px;
-position: absolute;
-z-index: 6;
-margin: 0;
-left: 30px;
-bottom: 400px;
-border-radius: 10px;
-p{
-  margin: 0;
-  color: white;
-}
 
-h5{
-  margin: 10px;
-  color: white;
-  font-size: 15px;
-}
-`
-
-const Three = styled.img`
-position: absolute;
-z-index: 5;
-top: 180px;
-right: 30px;
-width: 30%;
-`
-
-const Two = styled.img`
-/* width: 40%; */
-/* height: 40%; */
-/* object-fit: cover; */
-z-index: 3;
-position: absolute;
-/* left: 0px; */
-top:280px;
-left: 200px;
-`
-
-const One = styled.img`
-position: absolute;
-width: 90%;
-height: 40%;
-object-fit: cover;
-z-index: 1;
-border-radius: 20px;
-`
 
 
 
 const Title = styled.div`
-font-size: 2.0em;
+font-size: 2.5em;
 line-height: 50px;
-color: white;
+text-align: center;
+color:#030614;
 font-style: italic;
+z-index: 99999;
 font-weight:900;
+margin-bottom: 20px;
 
 @media screen and (max-width: 500px) {
   font-size: 200%;
@@ -243,8 +185,9 @@ p{
 }
 `
 const Text = styled.div`
-color: white;
+color:#030614;
 line-height: 30px;
+text-align: center;
 @media screen and (max-width: 500px) {
     font-size: 12px;
   }
@@ -253,9 +196,14 @@ line-height: 30px;
 const First = styled.div`
 display: flex;
 flex-direction: column;
+width: 100%;
+height: 100%;
  /* display: flex; */
 justify-content: center;
-/* align-items: center;  */
+align-items: center;
+position: relative;
+z-index: 99999;
+
 
 
 
@@ -291,14 +239,23 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #030614;
+/* background-color: #030614; */
 /* padding-top: 100px; */
-background-image: url(${bg});
+background-image: url(${bg5});
+/* background-color: white; */
 margin: 0;
-height: fit-content;
+height: 80vh;
 padding-bottom: 50px;
 padding-top: 80px;
-/* margin-top: 50px; */
+backdrop-filter: blur(2px);
+::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(3%, 16%, 16%, 0.7);
+    position:absolute;
+}
+
 @media screen and (max-width: 500px) {
 padding-top: 100px;
   

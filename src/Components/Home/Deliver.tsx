@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import pic from "../../Components/Assets/nice3rm.png"
-import line from "../../Components/Assets/line.png"
-import GlobalButton from "../../Components/GlobalProps/GlobalButton"
+import pic from "../Assets/nice3rm.png"
+import GlobalButton from "../GlobalProps/GlobalButton"
+import { NavLink } from 'react-router-dom'
 
 
 const Deliver = () => {
@@ -16,9 +16,7 @@ const Deliver = () => {
                 <Second>
                     <Title>
                     We Deliver The <br /> Quality Water
-                    <Line>
-                        <Img src={line}/>
-                    </Line>
+                   
                     </Title>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Magni excepturi dolorum  voluptatem optio voluptate dolor laudantium nesciunt  quam aliquam, numquam quas, veritatis autem beatae sed sint ab debitis. Quae, modi.
@@ -26,7 +24,9 @@ const Deliver = () => {
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. <br /> Magni excepturi dolorum  voluptatem optio voluptate dolor laudantium nesciunt  quam aliquam, numquam quas, veritatis autem beatae sed sint ab debitis. Quae, modi.
                     </p>
-              <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/>         
+             <NavLink to="/register">
+             <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/>      
+                </NavLink>   
                     
                 </Second>
             </Wrapper>
@@ -44,12 +44,7 @@ font-weight:600;
 margin-top: 5px;
 `
 
-const Line = styled.div`
-display: flex;
-/* align-items: center; */
-margin: 5px;
-/* justify-content: center; */
-`
+
 
 const Second = styled.div`
 margin: 30px;
