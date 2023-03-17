@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import line from "../../Assets/line.png"
 import Card from './Card'
-import icon from "../../Assets/icon.png"
-import icon1 from "../../Assets/icon2.png"
-import icon3 from "../../Assets/icon05.png"
-import icon4 from "../../Assets/icon06.png"
-import icon5 from "../../Assets/icon3.png"
-import nice from "../../Assets/nice2.png"
-import line1 from "../../Assets/line1.png"
+import icon from "../Assets/icon.png"
+import icon1 from "../Assets/icon2.png"
+import icon3 from "../Assets/icon05.png"
+import icon4 from "../Assets/icon06.png"
+import icon5 from "../Assets/icon3.png"
+import nice from "../Assets/nice2.png"
+import line1 from "../Assets/line1.png"
 
 
 const Story = () => {
