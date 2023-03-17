@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import bg from "../Assets/water.png";
 import bg from "../Assets/water.png"
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
@@ -19,10 +20,12 @@ const Signup = () => {
           <Input>
           
             <Email>Email</Email>
+            <input placeholder="" type="text" />
+            <Email>Password</Email>
+            <input placeholder="" type="password" />
             <input type="text"/>
             <Email>Password</Email>
             <input type="password" />
-        
           </Input>
           <button>Sign up</button>
           <Signin>
