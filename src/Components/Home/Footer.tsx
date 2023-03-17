@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 // import images from "../Assets/plane.svg"
 // import images from "../../Assets/logo1.png"
-import images from "../../Components/Assets/darklogo.png"
+// import images from "../../Assets/darklogo.png"
+import images from "../../Assets/water3-rmbg.png"
+
 
 import {BsTwitter, BsLinkedin, BsGithub, BsYoutube, BsTwitch} from "react-icons/bs"
 
@@ -147,18 +149,20 @@ const Down = styled.div`
     line-height: 20px;
     font-weight: 400;
     color: rgb(166, 166, 166);
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
 `
 const Images = styled.img`
-    height: 70px;
+    height: 200px;
     
 `
 const Left = styled.div`
     width: 35%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: flex-start;
-    /* background-color: red; */
     flex-direction: column;
     justify-content: center;
     @media screen and (max-width: 774px){
