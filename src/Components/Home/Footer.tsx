@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import images from "../Assets/plane.svg"
-// import images from "../../Assets/logo1.png"
-// import images from "../../Assets/darklogo.png"
-import images from "../../Assets/water3-rmbg.png"
+import images from "../Assets/water3-rmbg.png"
 
 
 import {BsTwitter, BsLinkedin, BsGithub, BsYoutube, BsTwitch} from "react-icons/bs"

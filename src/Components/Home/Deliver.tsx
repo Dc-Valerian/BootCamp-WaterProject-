@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import pic from "../../Assets/nice3rm.png"
+import pic from "../Assets/nice3rm.png"
 import GlobalButton from "../GlobalProps/GlobalButton"
 import { NavLink } from 'react-router-dom'
 
