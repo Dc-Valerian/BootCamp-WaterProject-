@@ -1,74 +1,84 @@
 import React from "react";
 import styled from "styled-components";
-import bg from "../Assets/water.png";
+import bg from "../Assets/water.png"
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
-import Header from "../Header/Header";
 
-const Signin = () => {
+const Signup = () => {
   return (
     <Container>
       <Wrapper>
         {/* <One> */}
         <Box>
           <Sign>
-            Sign in
+            Sign Up
             <Please>Please input your details</Please>
           </Sign>
 
           <Input>
+          
             <Email>Email</Email>
-            <input type="text" />
+            <input type="text"/>
             <Email>Password</Email>
             <input type="password" />
+        
           </Input>
-          <button>Sign in</button>
-          <Signn>
-            Don't have an acount?{" "}
-            <NavLink to="/signup" style={{ textDecoration: "none" }}>
+          <button>Sign up</button>
+          <Signin>
+            Do you have an acount?{" "}
+            <NavLink to="/homepage">
               <span
                 style={{
                   color: "#030614",
                   fontWeight: "bold",
                   cursor: "pointer",
                   fontSize: "15px",
-                  textDecoration: "none",
                 }}
               >
-                Sign up
+                Sign in
               </span>
             </NavLink>
-          </Signn>
+          </Signin>
         </Box>
       </Wrapper>
     </Container>
   );
 };
 
-export default Signin;
+export default Signup;
 
 const Email = styled.div`
   font-size: 11px;
   margin-top: 15px;
   margin-bottom: 5px;
-  font-weight: bold;
 `;
 const Logo = styled.div`
   font-size: 25px;
   font-weight: bold;
 `;
 
-const Signn = styled.div`
+const Signin = styled.div`
   font-size: 12px;
   color: lightgray;
   margin-top: 40px;
-  color: #644ff6;
+
+
 `;
 const Input = styled.div`
   width: 100%;
   color: #030614;
   /* background-color: red; */
+
+  input{
+    height: 50px;
+    /* width: 20px; */
+    border-radius: 5px;
+    background-color:#EDF2F7;
+    border: none;
+    outline: none;
+    /* padding-left: 15px; */
+  }
 `;
 
 const Two = styled.div``;
@@ -85,7 +95,7 @@ const Please = styled.div`
   font-size: 12px;
   line-height: 30px;
   /* margin-top: 10px; */
-  color: #644ff6;
+  color: lightgray;
   /* margin-bottom: 25px; */
 `;
 const Google = styled.div`
@@ -105,13 +115,13 @@ const Google = styled.div`
 // const Second = styled.div``
 
 const Box = styled.div`
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   /* border: 1px solid black; */
   border-radius: 20px;
-  background-color: white;
+  background-color:grey;
   width: 25%;
-  height: 85%;
+  height: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,28 +138,18 @@ const Box = styled.div`
     border: none;
     font-size: 15px;
     outline: none;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid #654ff652;
-    /* background-color: #644ff6; */
-    /* border-bottom: 1px solid lightgray; */
+    border-bottom: 1px solid lightgray;
     width: 100%;
   }
   button {
     margin-top: 30px;
-    background-color: #644ff6;
+    background-color: #030614;
     color: white;
     width: 100%;
     height: 40px;
     cursor: pointer;
     border-radius: 10px;
     border: none;
-    font-size: 20px;
-    font-weight: bold;
-    :hover {
-      background-color: #030614;
-      transform: all 350ms;
-    }
   }
 `;
 
@@ -166,17 +166,31 @@ const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+
   align-items: center;
   background-image: url(${bg});
-  background-color: #030614;
+  background-color: #c1cbd6;
+  /* width: 50%;
+  height: 100%; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* background-color: red; */
+  position: relative;
 
-  object-position: center;
-  object-fit: cover;
+  ::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #414040a1;
+    opacity: 0.8;
+    position: absolute;
+  }
 `;
 
 const Container = styled.div`
-  /* background-color: rgb(230, 232, 236); */
+  /* background-color: rgb(230, 232, 236);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  */
 `;

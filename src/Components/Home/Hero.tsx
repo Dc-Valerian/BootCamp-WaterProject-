@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import GlobalButton from "../GlobalProps/GlobalButton"
-import bg from "../../Assets/line3.png"
+// import bg from "../../Assets/line3.png"
 import {CgProfile} from "react-icons/cg"
-import pic from "../../Assets/nice3rm.png"
-import bg1 from "../../Assets/BgImage.jpg"
+// import pic from "../../Assets/nice3rm.png"
+// import bg1 from "../../Assets/BgImage.jpg"
 import bg5 from "../Assets/bg5.jpg"
 import { NavLink } from 'react-router-dom'
 

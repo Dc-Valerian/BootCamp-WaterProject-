@@ -24,7 +24,9 @@ const Header = () => {
     <div>
       <Container>
         <Wrapper>
-          <Logo src={logo}/>
+        <NavLink to="/homepage">
+        <Logo src={logo}/>
+        </NavLink>
 
           <NavWrapper>
             <Nav to="">Home</Nav>
