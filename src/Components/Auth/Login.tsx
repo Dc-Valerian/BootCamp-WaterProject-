@@ -15,13 +15,11 @@ const Signin = () => {
           {/* <Top> */}
             <h2>Clean Drops</h2>
           {/* </Top> */}
-          <Input type="text" placeholder='Enter your name' />
           <Input type="email" placeholder='Enter your Email' />
-          <Input type="text" placeholder='Enter your Home Address'/>
           <Input type="password" placeholder='Enter your password'/>
           <Input type="password" placeholder='Re-Enter Your Password'/>
           <NavLink to="/Dashboard" style={{textDecoration: "none"}}>
-            <Button>Sign in</Button>
+            <Button>Sign In</Button>
           </NavLink>
           <NavLink to="/signup" style={{textDecoration: "none"}}>
               <p>Don't Have an Account? <span>Sign Up</span></p>

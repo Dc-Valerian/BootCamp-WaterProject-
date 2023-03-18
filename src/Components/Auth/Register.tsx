@@ -1,10 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-// import bg from "../Assets/water.jpg";
-import bg from "../Assets/water.png"
-import { AiFillStar } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
-import { NavLink } from "react-router-dom";
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import styled from "styled-components"
+import img from "../Assets/img8.jpg"
+import logo from "../Assets/water3-rmbg.png"
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { RegisterUser } from "../States/ReduxState";
@@ -12,9 +10,10 @@ import { CreateUser } from "../Api/api";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispach } from "../States/Store";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
-const Signup = () => {
+const Signin = () => {
+
   const dispatch = UseAppDispach()
   const schema = yup
     .object({
@@ -48,193 +47,149 @@ const Signup = () => {
         title:`Successfully Register`,
         icon:"success"
        })
-      reset()
-    })
+    reset()
+  })
+
   return (
-    <Container id="register">
-      <Wrapper>
-        {/* <One> */}
-        <Box>
-          <Sign>
-            Sign up
-            <Please>Please input your details</Please>
-          </Sign>
-
-          <Input onSubmit={submit}>
-            <Email>Name</Email>
-            <input {...register("name")} type="text" />
-            {/* <p>{errors?.name && errors?.name?.message}</p> */}
-
-            <Email>Email</Email>
-            <input {...register("email")} type="email" />
-            {/* <p>{errors?.name && errors?.email?.message}</p> */}
-
-            <Email>Home Address</Email>
-            <input {...register("homeAddress")} type="text" />
-            {/* <p>{errors?.name && errors?.email?.message}</p> */}
-
-            <Email>Password</Email>
-            <input {...register("password")} type="password" />
-            {/* <p>{errors?.password && errors?.password?.message}</p> */}
-
-            <Email>Confirm Password</Email>
-            <input {...register("confirmpassword")} type="password" />
-            {/* <p>{errors?.confirmpassword && errors?.confirmpassword?.message}</p> */}
-          <button type="submit">Sign up</button>
-          </Input>
-          <Signin>
-            Do you have an acount?{" "}
-            <NavLink to="/login" style={{ textDecoration: "none" }}>
-              <span
-                style={{
-                  color: "#030614",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  fontSize: "15px",
-                  textDecoration: "none",
-                }}
-              >
-                Sign in
-              </span>
-            </NavLink>
-          </Signin>
-        </Box>
-      </Wrapper>
+    <Container>
+      <Card>
+        <Left>
+      <NavLink to="/">
+      <Logo src={logo}/>
+      </NavLink>
+          {/* <Top> */}
+            <h2>Clean Drops</h2>
+          {/* </Top> */}
+      <Form>
+      <Input type="text" placeholder='Enter your name' />
+          <Input type="email" placeholder='Enter your Email' />
+          <Input type="text" placeholder='Enter your Home Address'/>
+          <Input type="password" placeholder='Enter your password'/>
+          <Input type="password" placeholder='Re-Enter Your Password'/>
+          <NavLink to="/Dashboard" style={{textDecoration: "none"}}>
+            <Button>Sign Up</Button>
+          </NavLink>
+      </Form>
+          <NavLink to="/login" style={{textDecoration: "none"}}>
+              <p>Don't Have an Account? <span>Sign In</span></p>
+          </NavLink>
+        </Left>
+        <Right>
+          <Img src={img} />
+        </Right>  
+      </Card>
     </Container>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signin
+const Form = styled.form`
+width: 500px;
+height: 350px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+`
 
-const Email = styled.div`
-  font-size: 11px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-weight: bold;
-`;
-const Logo = styled.div`
-  font-size: 25px;
-  font-weight: bold;
-`;
+const Logo = styled.img`
+width: 200px;
+`
 
-const Signin = styled.div`
-  font-size: 12px;
-  color: lightgray;
-  margin-top: 30px;
-  color: #644ff6;
-`;
-const Input = styled.form`
+const Img = styled.img`
   width: 100%;
-  color: #030614;
-  /* background-color: red; */
-`;
-
-const Two = styled.div``;
-
-const Sign = styled.div`
-  font-size: 30px;
-  font-weight: bold;
-  @media (max-width: 800px) {
-    /* background-color: #1b1b44; */
-    font-size: 20px;
-  }
-`;
-const Please = styled.div`
-  font-size: 12px;
-  line-height: 30px;
-  /* margin-top: 10px; */
-  color: #644ff6;
-  /* margin-bottom: 25px; */
-`;
-const Google = styled.div`
-  border: 1px solid lightgray;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 35px;
-  font-size: 12px;
-  border-radius: 10px;
-  cursor: pointer;
-`;
-
-// const Second = styled.div``
-// const Second = styled.div``
-// const Second = styled.div``
-
-const Box = styled.div`
-  padding-left: 25px;
-  padding-right: 25px;
-  /* border: 1px solid black; */
-  border-radius: 20px;
-  background-color: white;
-  width: 25%;
-  height: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 1;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  @media (max-width: 800px) {
-    /* background-color: #1b1b44; */
-    width: 30%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  input {
-    border: none;
-    font-size: 15px;
-    outline: none;
-    height: 30px;
-    border-radius: 5px;
-    border: 1px solid #654ff652;
-    /* background-color: #644ff6; */
-    /* border-bottom: 1px solid lightgray; */
-    width: 100%;
-  }
-  button {
-    margin-top: 30px;
-    background-color: #644ff6;
-    color: white;
-    width: 100%;
-    height: 40px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    :hover {
-      background-color: #030614;
-      transform: all 350ms;
-    }
-  }
-`;
-
-const One = styled.div`
-  width: 50%;
   height: 100%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(${bg});
-  background-color: #030614;
-
-  object-position: center;
   object-fit: cover;
-`;
+
+  @media screen and (max-width:500px) {
+    display: none;
+  }
+`
+const Button = styled.button`
+  width: 160px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  outline: none;
+  align-items: center;
+  color: #fff;
+  background-color: #030614;
+  cursor: pointer;
+  transition: all 350ms ease-in-out;
+  border-radius: 50px;
+  margin-top: 20px;
+  :hover{
+    background-color: #fff;
+    color:#030614;
+    border: 1px solid #030614;
+  }
+`
+const Input = styled.input`
+  width: 70%;
+  height: 80px;
+  margin-bottom: 10px;
+  border: 1px solid #f1f1f1;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 10px;
+  margin-top: 15px;
+`
+const Top = styled.div`
+  h2{
+    color: #03993f;
+  }
+`
+const Left = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  span{
+    color: #030614;
+  }
+  p{
+    color: #c2c2c2;
+    margin: 0;
+    margin-top: 7px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  h2{
+  margin-top: -20px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 900%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    margin-bottom: 30px;
+  }
+`
+const Right = styled.div`
+  width: 50%;
+  display: flex;
+`
+const Card = styled.form`
+  width: 800px;
+  height: 600px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+
+
+`
 
 const Container = styled.div`
-  /* background-color: rgb(230, 232, 236); */
+  width: 100%;
   display: flex;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
-`;
+  align-items: center;
+`

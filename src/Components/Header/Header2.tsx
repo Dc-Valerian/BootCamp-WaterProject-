@@ -27,20 +27,20 @@ const Header = () => {
           <NavLink to="/">
           <Logo src={logo}/>
           </NavLink>
-          {/* <NavWrapper>
+          <NavWrapper>
             <Nav to="/homepage">Home</Nav>
             <Nav to="">About</Nav>
             <Nav to="">Solutions</Nav>
             <Nav to="">Page</Nav>
             <Nav to="">Contact</Nav>
-          </NavWrapper> */}
+          </NavWrapper>
 
           <Buttonwrapper>
        <NavLink to="/register">
        <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/> 
         </NavLink>        
          <NavLink to="/login">
-         <GlobalButton name='Sign Up' bcc="transparent" border='1px solid white' cl='white'/> 
+         <GlobalButton name='Sign In' bcc="transparent" border='1px solid white' cl='white'/> 
           </NavLink>  
            </Buttonwrapper>
         </Wrapper>
