@@ -5,17 +5,70 @@ import bg from "../Assets/water.png"
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
+import Header from "../Header/Header";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from 'axios'
+import { useForm } from 'react-hook-form'
+import {UseAppDispach } from "../States/Store"
+import { CreateUser } from '../Api/api'
+import { LoginUser } from "../States/ReduxState";
+import { useMutation } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
-const Signup = () => {
+
+const Signin = () => {
+  const dispatch = UseAppDispach()
+  const schema = yup
+    .object({
+      email: yup.string().email().required(),
+      password: yup.string().min(9).required(),
+    })
+    .required();
+
+  type formData = yup.InferType<typeof schema>;
+
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+    register,
+  } = useForm<formData>({
+    resolver: yupResolver(schema),
+  });
+   const Post = useMutation({
+    mutationKey:["post"],
+    mutationFn:CreateUser,
+    onSuccess:(data:any)=>{
+      dispatch(LoginUser(data.data))
+    }
+   })
+   const Submit = handleSubmit((data)=>{
+    Post.mutate(data)
+    Swal.fire({
+      title:`Welcome back `,
+      icon:"success"
+     })
+    reset()
+   })
   return (
     <Container>
-      <Wrapper>
+      <Wrapper id="register">
         {/* <One> */}
-        <Box>
+        <Box onSubmit={Submit}>
           <Sign>
-            Sign Up
+            Sign in
             <Please>Please input your details</Please>
           </Sign>
+          <input {...register("email")} placeholder="Enter your email" />
+          <p>{errors?.email && errors?.email?.message}</p>
+          <input {...register("password")} placeholder="Enter your password" />
+          <p>{errors?.password && errors?.password?.message}</p>
+
+          <button type="submit">Sign in</button>
+          <Signn>
+            Don't have an acount?{" "}
+            <NavLink to="/signup" style={{ textDecoration: "none" }}>
 
           <Input>
           
@@ -37,51 +90,42 @@ const Signup = () => {
                   fontWeight: "bold",
                   cursor: "pointer",
                   fontSize: "15px",
+                  textDecoration: "none",
                 }}
               >
-                Sign in
+                Sign up
               </span>
             </NavLink>
-          </Signin>
+          </Signn>
         </Box>
       </Wrapper>
     </Container>
   );
 };
 
-export default Signup;
+export default Signin;
 
 const Email = styled.div`
   font-size: 11px;
   margin-top: 15px;
   margin-bottom: 5px;
+  font-weight: bold;
 `;
 const Logo = styled.div`
   font-size: 25px;
   font-weight: bold;
 `;
 
-const Signin = styled.div`
+const Signn = styled.div`
   font-size: 12px;
   color: lightgray;
   margin-top: 40px;
-
-
+  color: #644ff6;
 `;
 const Input = styled.div`
   width: 100%;
   color: #030614;
   /* background-color: red; */
-
-  input{
-    height: 50px;
-    /* width: 20px; */
-    border-radius: 5px;
-    background-color:#EDF2F7;
-    border: none;
-    outline: none;
-    /* padding-left: 15px; */
-  }
 `;
 
 const Two = styled.div``;
@@ -98,7 +142,7 @@ const Please = styled.div`
   font-size: 12px;
   line-height: 30px;
   /* margin-top: 10px; */
-  color: lightgray;
+  color: #644ff6;
   /* margin-bottom: 25px; */
 `;
 const Google = styled.div`
@@ -117,14 +161,14 @@ const Google = styled.div`
 // const Second = styled.div``
 // const Second = styled.div``
 
-const Box = styled.div`
-  padding-left: 15px;
-  padding-right: 15px;
+const Box = styled.form`
+  padding-left: 25px;
+  padding-right: 25px;
   /* border: 1px solid black; */
   border-radius: 20px;
-  background-color:grey;
+  background-color: white;
   width: 25%;
-  height: 55%;
+  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,18 +185,28 @@ const Box = styled.div`
     border: none;
     font-size: 15px;
     outline: none;
-    border-bottom: 1px solid lightgray;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #654ff652;
+    /* background-color: #644ff6; */
+    /* border-bottom: 1px solid lightgray; */
     width: 100%;
   }
   button {
     margin-top: 30px;
-    background-color: #030614;
+    background-color: #644ff6;
     color: white;
     width: 100%;
     height: 40px;
     cursor: pointer;
     border-radius: 10px;
     border: none;
+    font-size: 20px;
+    font-weight: bold;
+    :hover {
+      background-color: #030614;
+      transform: all 350ms;
+    }
   }
 `;
 
@@ -169,31 +223,17 @@ const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
-
   align-items: center;
   background-image: url(${bg});
-  background-color: #c1cbd6;
-  /* width: 50%;
-  height: 100%; */
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  /* background-color: red; */
-  position: relative;
+  background-color: #030614;
 
-  ::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: #414040a1;
-    opacity: 0.8;
-    position: absolute;
-  }
+  object-position: center;
+  object-fit: cover;
 `;
 
 const Container = styled.div`
-  /* background-color: rgb(230, 232, 236);
+  /* background-color: rgb(230, 232, 236); */
   display: flex;
   align-items: center;
-  justify-content: center;  */
+  justify-content: center;
 `;

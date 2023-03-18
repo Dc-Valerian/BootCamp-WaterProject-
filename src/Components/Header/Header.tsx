@@ -36,10 +36,12 @@ const Header = () => {
             <Nav to="">Contact</Nav>
           </NavWrapper>
 
-          <Buttonwrapper>
-          <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/>         
+          {/* <Buttonwrapper>
+        <NavLink to="./register">
+        <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/>        
+          </NavLink>  
           <GlobalButton name='Sign Up' bcc="transparent" border='1px solid white' cl='white'/>   
-           </Buttonwrapper>
+           </Buttonwrapper> */}
         </Wrapper>
         {media ? (
             <Span onClick={remove}>X</Span>
