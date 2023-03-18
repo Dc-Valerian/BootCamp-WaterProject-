@@ -19,18 +19,11 @@ const Signup = () => {
   const schema = yup
     .object({
       name: yup.string().required("Name is a Required Field"),
-      email: yup
-        .string()
-        .required("Please Enter Your Valid Email Address")
-        .email(),
+      email: yup.string().email().required("Please Enter Your Valid Email Address"),
       homeAddress: yup.string().required("This is a required Field"),
       password: yup.string().min(5).required("Please enter a password"),
-      confirmpassword: yup
-        .string()
-        .oneOf([yup.ref("password")])
-        .required(),
-    })
-    .required();
+      confirmpassword: yup.string().oneOf([yup.ref("password")]).required(),
+    }).required();
 
   type formData = yup.InferType<typeof schema>;
 
