@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import bg from "../Assets/water.png";
+import bg from "../Assets/water.png"
 import { AiFillStar } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
@@ -68,6 +69,21 @@ const Signin = () => {
           <Signn>
             Don't have an acount?{" "}
             <NavLink to="/signup" style={{ textDecoration: "none" }}>
+
+          <Input>
+          
+            <Email>Email</Email>
+            <input placeholder="" type="text" />
+            <Email>Password</Email>
+            <input placeholder="" type="password" />
+            <input type="text"/>
+            <Email>Password</Email>
+            <input type="password" />
+          </Input>
+          <button>Sign up</button>
+          <Signin>
+            Do you have an acount?{" "}
+            <NavLink to="/homepage">
               <span
                 style={{
                   color: "#030614",
