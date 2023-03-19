@@ -3,53 +3,8 @@ import { NavLink } from 'react-router-dom'
 import styled from "styled-components"
 import img from "../Assets/img8.jpg"
 import logo from "../Assets/water3-rmbg.png"
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { RegisterUser } from "../States/ReduxState";
-import { CreateUser } from "../Api/api";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useMutation } from "@tanstack/react-query";
-import { UseAppDispach } from "../States/Store";
-import Swal from "sweetalert2";
 
 const Signin = () => {
-
-  const dispatch = UseAppDispach()
-  const schema = yup
-    .object({
-      name: yup.string().required("Name is a Required Field"),
-      email: yup.string().email().required("Please Enter Your Valid Email Address"),
-      homeAddress: yup.string().required("This is a required Field"),
-      password: yup.string().min(5).required("Please enter a password"),
-      confirmpassword: yup.string().oneOf([yup.ref("password")]).required(),
-    }).required();
-
-  type formData = yup.InferType<typeof schema>;
-
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
-    resolver: yupResolver(schema),
-  });
-    const Post=useMutation({
-      mutationKey:["post"],
-      mutationFn:CreateUser,
-      onSuccess:(data:any)=>{
-        dispatch(RegisterUser(data.data))
-      }
-    })
-    const submit = handleSubmit((data)=>{
-      Post.mutate(data)
-      Swal.fire({
-        title:`Successfully Register`,
-        icon:"success"
-       })
-    reset()
-  })
-
   return (
     <Container>
       <Card>
@@ -60,38 +15,27 @@ const Signin = () => {
           {/* <Top> */}
             <h2>Clean Drops</h2>
           {/* </Top> */}
-      <Form>
-      <Input type="text" placeholder='Enter your name' />
+          <Input type="text" placeholder='Enter your Name' />
           <Input type="email" placeholder='Enter your Email' />
-          <Input type="text" placeholder='Enter your Home Address'/>
+          <Input type="text" placeholder='Enter your Home Address' />
           <Input type="password" placeholder='Enter your password'/>
-          <Input type="password" placeholder='Re-Enter Your Password'/>
+          <Input type="password" placeholder='Re-Enter Your ConfirmPassword'/>
           <NavLink to="/Dashboard" style={{textDecoration: "none"}}>
-            <Button>Sign Up</Button>
+            <Button>Sign In</Button>
           </NavLink>
-      </Form>
-          <NavLink to="/login" style={{textDecoration: "none"}}>
-              <p>Don't Have an Account? <span>Sign In</span></p>
+          <NavLink to="/signup" style={{textDecoration: "none"}}>
+              <p>Don't Have an Account? <span>Sign Up</span></p>
           </NavLink>
         </Left>
         <Right>
           <Img src={img} />
-        </Right>  
+        </Right>
       </Card>
     </Container>
   )
 }
 
 export default Signin
-const Form = styled.form`
-width: 500px;
-height: 350px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-`
-
 const Logo = styled.img`
 width: 200px;
 `
@@ -127,7 +71,7 @@ const Button = styled.button`
 `
 const Input = styled.input`
   width: 70%;
-  height: 80px;
+  height: 40px;
   margin-bottom: 10px;
   border: 1px solid #f1f1f1;
   outline: none;
@@ -175,7 +119,7 @@ const Right = styled.div`
   width: 50%;
   display: flex;
 `
-const Card = styled.form`
+const Card = styled.div`
   width: 800px;
   height: 600px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;

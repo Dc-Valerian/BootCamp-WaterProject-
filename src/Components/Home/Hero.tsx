@@ -30,10 +30,10 @@ const Hero = () => {
             <h3>Clean Drops <br /> Providing a Healthy Alternative</h3>
             <p>Online & Easy Placement for Your Natural Water Source of Life</p>
             <Button>
-            <NavLink to="/register">
+            <NavLink to="/register" style={{textDecoration: "none"}}>
        <GlobalButton name='Get Started' bcc="#644FF6" border='none' cl='white'/> 
         </NavLink>        
-         <NavLink to="/login">
+         <NavLink to="/login" style={{textDecoration: "none"}}>
          <GlobalButton name='Sign In' bcc="transparent" border='1px solid white' cl='white'/> 
           </NavLink>  
             </Button>
@@ -74,6 +74,11 @@ export default Hero;
 const Button = styled.div`
 display: flex;
 margin-top: 20px;
+
+@media screen and (max-width: 500px) {
+  display: flex;
+  flex-direction: column;
+}
 `
 
 const Container = styled.div`

@@ -41,7 +41,7 @@ transition: all 350ms;
 }
 
 @media screen and (max-width:500px) {
-  width:250px;
+  width:280px;
   /* display: flex;
   align-items: center; */
 }
