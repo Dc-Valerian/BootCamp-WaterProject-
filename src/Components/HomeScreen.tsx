@@ -12,11 +12,11 @@ const HomeScreen = () => {
     <div>
         <Header2/>
         <Hero/>
-        <Online/>
+        {/* <Online/>
         <Chart/>
         <Story/>
-        <Deliver/>
-        <Footer/>
+        <Deliver/> */}
+        {/* <Footer/> */}
     </div>
   )
 }

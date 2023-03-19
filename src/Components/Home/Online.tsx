@@ -164,11 +164,11 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: -5%;
+/* margin-top: -5%; */
 /* z-index: ; */
 
 @media screen and (max-width: 500px) {
     bottom: 100px;
-    margin-top: -200px;
+    /* margin-top: -200px; */
 }
 `
