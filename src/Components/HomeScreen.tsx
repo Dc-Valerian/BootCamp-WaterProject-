@@ -12,10 +12,10 @@ const HomeScreen = () => {
     <div>
         <Header2/>
         <Hero/>
-        {/* <Online/>
+        <Online/>
         <Chart/>
-        <Story/>
-        <Deliver/> */}
+        {/* <Story/> */}
+        {/* <Deliver/> */}
         {/* <Footer/> */}
     </div>
   )
